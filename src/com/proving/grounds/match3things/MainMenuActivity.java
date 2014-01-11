@@ -2,6 +2,7 @@ package com.proving.grounds.match3things;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
@@ -21,7 +22,9 @@ public class MainMenuActivity extends Activity {
     }
     
     public void launchNewGame(View view) {
-	
+	//launch GameActivity with a new game
+	Intent intent = new Intent(this, GameActivity.class);
+	startActivity(intent);
     }
 
 }
