@@ -15,7 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="174dp"
-        android:text="New Game" />
+        android:onClick="launchNewGame"
+        android:text="@string/new_game" />
 
     <Button
         android:id="@+id/exit_button"
@@ -23,6 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/new_game_button"
         android:layout_centerHorizontal="true"
-        android:text="Exit" />
+        android:text="@string/exit" />
 
 </RelativeLayout>

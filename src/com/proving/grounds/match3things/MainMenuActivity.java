@@ -3,6 +3,7 @@ package com.proving.grounds.match3things;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
 
 public class MainMenuActivity extends Activity {
 
@@ -17,6 +18,10 @@ public class MainMenuActivity extends Activity {
 	// Inflate the menu; this adds items to the action bar if it is present.
 	getMenuInflater().inflate(R.menu.main_menu, menu);
 	return true;
+    }
+    
+    public void launchNewGame(View view) {
+	
     }
 
 }
