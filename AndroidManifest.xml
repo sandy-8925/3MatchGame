@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.proving.grounds.match3things.MainMenuActivity"
+            android:name="com.provinggrounds.match3things.activity.MainMenuActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.proving.grounds.match3things.GameActivity"
+            android:name="com.provinggrounds.match3things.activity.GameActivity"
             android:label="@string/title_activity_game"
-            android:parentActivityName="com.proving.grounds.match3things.MainMenuActivity" >
+            android:parentActivityName="com.provinggrounds.match3things.activity.MainMenuActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.proving.grounds.match3things.MainMenuActivity" />
