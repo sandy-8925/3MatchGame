@@ -21,4 +21,8 @@ public class Grid {
 	this.width = width;
 	this.height = height;
     }
+
+    private void createGameGrid() {
+	gameGrid = new Block[width][height];
+    }
 }
