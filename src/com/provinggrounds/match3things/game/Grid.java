@@ -24,6 +24,9 @@ public class Grid {
 	createGameGrid();
     }
 
+    /*
+     * Creates grid, allocates storage
+     */
     private void createGameGrid() {
 	gameGrid = new Block[width][height];
     }
