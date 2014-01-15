@@ -21,13 +21,13 @@ public class Grid {
 	this.width = width;
 	this.height = height;
 
-	createGameGrid();
+	initGameGridArray();
     }
 
     /*
      * Creates grid, allocates storage
      */
-    private void createGameGrid() {
+    private void initGameGridArray() {
 	gameGrid = new int[width][height];
     }
 
