@@ -3,10 +3,15 @@ package com.provinggrounds.match3things.game;
 
 /*
  * Represents a game grid. Contains a rectangular grid of numbers.
+ * All numbers must be positive integers greater than 0, between 1 and numObjectTypes(both inclusive)
  */
 public class Grid {
     int width;
     int height;
+    /*
+     * Represents number of unique object types
+     */
+    int numObjectTypes;
     int[][] gameGrid;
 
     /*
