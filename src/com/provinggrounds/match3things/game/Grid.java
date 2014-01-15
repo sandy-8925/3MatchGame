@@ -30,4 +30,11 @@ public class Grid {
     private void createGameGrid() {
 	gameGrid = new Block[width][height];
     }
+
+    /*
+     * Initialize/fill game grid with random objects
+     */
+    private void fillGameGrid() {
+
+    }
 }
