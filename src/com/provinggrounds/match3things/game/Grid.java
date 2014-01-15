@@ -2,12 +2,12 @@ package com.provinggrounds.match3things.game;
 
 
 /*
- * Represents a game grid. Contains a rectangular grid of Block objects.
+ * Represents a game grid. Contains a rectangular grid of numbers.
  */
 public class Grid {
     int width;
     int height;
-    Block[][] gameGrid;
+    int[][] gameGrid;
 
     /*
      * Width and height must always be provided to Grid - should not be constructed without initializing/passing in those values
@@ -28,7 +28,7 @@ public class Grid {
      * Creates grid, allocates storage
      */
     private void createGameGrid() {
-	gameGrid = new Block[width][height];
+	gameGrid = new int[width][height];
     }
 
     /*
