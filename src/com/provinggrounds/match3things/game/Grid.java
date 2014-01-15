@@ -29,6 +29,7 @@ public class Grid {
 	this.numObjectTypes = numObjectTypes;
 
 	initGameGridArray();
+	fillGameGrid();
     }
 
     /*
