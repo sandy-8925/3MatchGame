@@ -20,6 +20,8 @@ public class Grid {
     Grid(int width, int height) {
 	this.width = width;
 	this.height = height;
+
+	createGameGrid();
     }
 
     private void createGameGrid() {
