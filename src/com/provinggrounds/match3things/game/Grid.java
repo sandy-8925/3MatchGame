@@ -24,7 +24,6 @@ public class Grid {
     }
 
     Grid(int width, int height, int numObjectTypes) {
-	this();
 	this.width = width;
 	this.height = height;
 	this.numObjectTypes = numObjectTypes;
