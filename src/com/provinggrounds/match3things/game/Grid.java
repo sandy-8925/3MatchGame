@@ -15,13 +15,12 @@ public class Grid {
      */
     int numObjectTypes;
     int[][] gameGrid;
-    Random randomNumberGenerator;
+    static final Random randomNumberGenerator = new Random();
 
     /*
      * Width and height must always be provided to Grid - should not be constructed without initializing/passing in those values
      */
     private Grid() {
-	randomNumberGenerator = new Random();
     }
 
     Grid(int width, int height, int numObjectTypes) {
