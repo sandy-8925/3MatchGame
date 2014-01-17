@@ -3,6 +3,7 @@ package com.provinggrounds.match3things.activity;
 import com.proving.grounds.match3things.R;
 import com.proving.grounds.match3things.R.layout;
 import com.proving.grounds.match3things.R.menu;
+import com.provinggrounds.match3things.game.Grid;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -11,6 +12,8 @@ import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 
 public class GameActivity extends Activity {
+
+    Grid currentGameGrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
