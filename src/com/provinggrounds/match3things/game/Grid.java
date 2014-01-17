@@ -49,4 +49,8 @@ public class Grid {
 	    }
 	}
     }
+
+    public int[][] getGameGrid() {
+        return gameGrid;
+    }
 }
