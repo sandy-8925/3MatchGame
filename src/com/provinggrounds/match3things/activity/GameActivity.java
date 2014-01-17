@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
 import android.support.v4.app.NavUtils;
 
 public class GameActivity extends Activity {
 
     Grid currentGameGrid;
+    GridView gameGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
