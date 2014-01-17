@@ -25,6 +25,12 @@ public class GameActivity extends Activity {
 	setupActionBar();
 
 	currentGameGrid = new Grid(4, 4, 6);
+	gameGridView = createGridView(currentGameGrid);
+    }
+
+    private GridView createGridView(Grid gameGrid) {
+	GridView newGridView = new GridView(this);
+	return newGridView;
     }
 
     /**
