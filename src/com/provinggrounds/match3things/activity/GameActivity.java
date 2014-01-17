@@ -21,6 +21,8 @@ public class GameActivity extends Activity {
 	setContentView(R.layout.activity_game);
 	// Show the Up button in the action bar.
 	setupActionBar();
+
+	currentGameGrid = new Grid(4, 4, 6);
     }
 
     /**
