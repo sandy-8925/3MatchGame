@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.support.v4.app.NavUtils;
 
@@ -31,6 +32,8 @@ public class GameActivity extends Activity {
     private GridView createGridView(Grid gameGrid) {
 	GridView newGridView = new GridView(this);
 	newGridView.setNumColumns(gameGrid.getWidth());
+	ArrayAdapter<int[]> gridAdapter = new ArrayAdapter<int[]>(this, R.layout.grid_element_text_view, gameGrid.getGameGrid());
+	newGridView.setAdapter(gridAdapter);
 	return newGridView;
     }
 
