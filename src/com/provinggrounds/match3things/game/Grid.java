@@ -53,4 +53,12 @@ public class Grid {
     public int[][] getGameGrid() {
         return gameGrid;
     }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 }
