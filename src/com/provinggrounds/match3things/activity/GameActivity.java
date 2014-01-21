@@ -30,6 +30,7 @@ public class GameActivity extends Activity {
 
     private GridView createGridView(Grid gameGrid) {
 	GridView newGridView = new GridView(this);
+	newGridView.setNumColumns(gameGrid.getWidth());
 	return newGridView;
     }
 
