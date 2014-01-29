@@ -6,4 +6,6 @@
     <string name="title_activity_game">Play</string>
     <string name="new_game">New Game</string>
     <string name="exit">Exit</string>
+    <string name="title_activity_new_game_preferences">New Game Settings</string>
+
 </resources>
