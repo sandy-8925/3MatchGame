@@ -24,7 +24,7 @@ public class MainMenuActivity extends Activity {
     
     public void launchNewGame(View view) {
 	//launch GameActivity with a new game
-	Intent intent = new Intent(this, GameActivity.class);
+	Intent intent = new Intent(this, NewGamePreferencesActivity.class);
 	startActivity(intent);
     }
 
