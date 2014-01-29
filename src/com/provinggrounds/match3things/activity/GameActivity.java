@@ -1,8 +1,6 @@
 package com.provinggrounds.match3things.activity;
 
 import com.proving.grounds.match3things.R;
-import com.proving.grounds.match3things.R.layout;
-import com.proving.grounds.match3things.R.menu;
 import com.provinggrounds.match3things.game.Grid;
 
 import android.os.Bundle;
