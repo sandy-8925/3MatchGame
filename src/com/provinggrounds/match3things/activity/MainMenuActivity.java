@@ -22,6 +22,9 @@ public class MainMenuActivity extends Activity {
 	return true;
     }
     
+    /*
+     * Called on clicking "New Game" button - starts new game process
+     */
     public void launchNewGame(View view) {
 	//launch GameActivity with a new game
 	Intent intent = new Intent(this, NewGamePreferencesActivity.class);
