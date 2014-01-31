@@ -10,5 +10,6 @@
     <string name="text_height">Height</string>
     <string name="text_width">Width</string>
     <string name="text_numBlockTypes">Number of block types</string>
+    <string name="text_OK">OK</string>
 
 </resources>
