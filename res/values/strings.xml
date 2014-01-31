@@ -7,5 +7,8 @@
     <string name="new_game">New Game</string>
     <string name="exit">Exit</string>
     <string name="title_activity_new_game_preferences">New Game Settings</string>
+    <string name="text_height">Height</string>
+    <string name="text_width">Width</string>
+    <string name="text_numBlockTypes">Number of block types</string>
 
 </resources>
