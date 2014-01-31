@@ -80,6 +80,7 @@
 
     </LinearLayout>
 
+    <!-- On clicking, launches new game with parameters entered by user -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
