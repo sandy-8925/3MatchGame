@@ -5,6 +5,7 @@ import com.provinggrounds.match3things.game.Grid;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,9 @@ import android.support.v4.app.NavUtils;
 
 public class GameActivity extends Activity {
 
+    private static final int defaultNumBlockTypes = 6;
+    private static final int defaultGridWidth = 4;
+    private static final int defaultGridHeight = 4;
     Grid currentGameGrid;
     GridView gameGridView;
 
@@ -22,6 +26,11 @@ public class GameActivity extends Activity {
 	setContentView(R.layout.activity_game);
 	// Show the Up button in the action bar.
 	setupActionBar();
+
+	Intent callingIntent = getIntent();
+	int gridHeight = callingIntent.getIntExtra(IntentExtraReferences.HEIGHT, defaultGridHeight);
+	int gridWidth = callingIntent.getIntExtra(IntentExtraReferences.WIDTH, defaultGridWidth);
+	int gridNumBlockTypes = callingIntent.getIntExtra(IntentExtraReferences.NUMBLOCKTYPES, defaultNumBlockTypes);
 
 	currentGameGrid = new Grid(4, 4, 6);
 	gameGridView = createGridView(currentGameGrid);
