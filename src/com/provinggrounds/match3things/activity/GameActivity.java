@@ -32,7 +32,7 @@ public class GameActivity extends Activity {
 	int gridWidth = callingIntent.getIntExtra(IntentExtraReferences.WIDTH, defaultGridWidth);
 	int gridNumBlockTypes = callingIntent.getIntExtra(IntentExtraReferences.NUMBLOCKTYPES, defaultNumBlockTypes);
 
-	currentGameGrid = new Grid(4, 4, 6);
+	currentGameGrid = new Grid(gridHeight, gridWidth, gridNumBlockTypes);
 	gameGridView = createGridView(currentGameGrid);
     }
 
