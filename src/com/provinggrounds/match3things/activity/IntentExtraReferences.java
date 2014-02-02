@@ -1,4 +1,4 @@
-package com.provinggrounds.match3things.constants;
+package com.provinggrounds.match3things.activity;
 
 public class IntentExtraReferences {
     public static final String HEIGHT = "height";

@@ -1,7 +1,6 @@
 package com.provinggrounds.match3things.activity;
 
 import com.proving.grounds.match3things.R;
-import com.provinggrounds.match3things.constants.IntentExtraReferences;
 
 import android.os.Bundle;
 import android.view.View;
