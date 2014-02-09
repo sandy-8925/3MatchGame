@@ -36,7 +36,7 @@ public class Grid {
      * Creates grid, allocates storage
      */
     private void initGameGridArray() {
-	gameGrid = new int[width][height];
+	gameGrid = new int[height][width];
     }
 
     /*
