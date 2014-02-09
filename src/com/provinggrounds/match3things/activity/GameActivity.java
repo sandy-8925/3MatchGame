@@ -31,15 +31,14 @@ public class GameActivity extends Activity {
 	int gridNumBlockTypes = callingIntent.getIntExtra(IntentExtraReferences.NUMBLOCKTYPES, defaultNumBlockTypes);
 
 	currentGameGrid = new Grid(gridHeight, gridWidth, gridNumBlockTypes);
-	gameGridView = createGridView(currentGameGrid);
+	setGridViewProperties(currentGameGrid);
     }
 
-    private GridView createGridView(Grid gameGrid) {
-	GridView newGridView = new GridView(this);
-	newGridView.setNumColumns(gameGrid.getWidth());
+    private void setGridViewProperties(Grid gameGrid) {
+	GridView gameGridView = (GridView)findViewById(R.id.gameGrid);
+	gameGridView.setNumColumns(gameGrid.getWidth());
 	ArrayAdapter<int[]> gridAdapter = new ArrayAdapter<int[]>(this, R.layout.grid_element_text_view, gameGrid.getGameGrid());
-	newGridView.setAdapter(gridAdapter);
-	return newGridView;
+	gameGridView.setAdapter(gridAdapter);
     }
 
     /**
