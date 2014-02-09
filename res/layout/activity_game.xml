@@ -5,4 +5,13 @@
     android:orientation="vertical"
     tools:context=".GameActivity" >
 
+    <GridView
+    android:id="@+id/gameGrid"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:verticalSpacing="2dp"
+    android:horizontalSpacing="2dp"
+    android:gravity="center"
+	/>
+
 </LinearLayout>
