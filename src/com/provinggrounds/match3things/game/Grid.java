@@ -14,7 +14,7 @@ public class Grid {
      * Represents number of unique object types
      */
     int numObjectTypes;
-    int[][] gameGrid;
+    Integer[] gameGrid;
     static final Random randomNumberGenerator = new Random();
 
     /*
@@ -36,21 +36,19 @@ public class Grid {
      * Creates grid, allocates storage
      */
     private void initGameGridArray() {
-	gameGrid = new int[height][width];
+	gameGrid = new Integer[height*width];
     }
 
     /*
      * Initialize/fill game grid with random objects
      */
     private void fillGameGrid() {
-	for( int[] gameGridRow : gameGrid ) {
-	    for(int counter = 0; counter < gameGridRow.length; counter++) {
-		gameGridRow[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
-	    }
+    for(int counter = 0; counter < gameGrid.length; counter++) {
+		gameGrid[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
 	}
     }
 
-    public int[][] getGameGrid() {
+    public Integer[] getGameGrid() {
         return gameGrid;
     }
 

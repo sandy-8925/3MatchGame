@@ -37,7 +37,7 @@ public class GameActivity extends Activity {
     private void setGridViewProperties(Grid gameGrid) {
 	GridView gameGridView = (GridView)findViewById(R.id.gameGrid);
 	gameGridView.setNumColumns(gameGrid.getWidth());
-	ArrayAdapter<int[]> gridAdapter = new ArrayAdapter<int[]>(this, R.layout.grid_element_text_view, gameGrid.getGameGrid());
+	ArrayAdapter<Integer> gridAdapter = new ArrayAdapter<Integer>(this, R.layout.grid_element_text_view, gameGrid.getGameGrid());
 	gameGridView.setAdapter(gridAdapter);
     }
 
