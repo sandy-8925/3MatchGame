@@ -8,6 +8,7 @@ import java.util.Random;
  * All numbers must be positive integers greater than 0, between 1 and numObjectTypes(both inclusive)
  */
 public class Grid {
+    private static final int NUM_MATCHING_SETS = 4;
     int width;
     int height;
     /*
@@ -43,12 +44,19 @@ public class Grid {
      * Initialize/fill game grid with random objects
      */
     private void fillGameGrid() {
-    //create matching sets first, then fill in remaining elements with random numbers
+		//create matching sets first, then fill in remaining elements with random numbers
 
-    for(int counter = 0; counter < gameGrid.length; counter++) {
-    	if(gameGrid[counter] == null)
-    		gameGrid[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
-	}
+		//pick 4 random positions
+		Coord[] matchingSetStartPoints = new Coord[NUM_MATCHING_SETS];
+		for(Coord currentPoint : matchingSetStartPoints) {
+			currentPoint.x = randomNumberGenerator.nextInt(width);
+			currentPoint.y = randomNumberGenerator.nextInt(height);
+		}
+
+		for(int counter = 0; counter < gameGrid.length; counter++) {
+			if(gameGrid[counter] == null)
+				gameGrid[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
+		}
     }
 
     public Integer[] getGameGrid() {
