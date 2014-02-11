@@ -2,6 +2,9 @@ package com.provinggrounds.match3things.game;
 
 import java.util.Random;
 
+import com.provinggrounds.match3things.util.Direction;
+import com.provinggrounds.match3things.util.Orientation;
+
 
 /*
  * Represents a game grid. Contains a rectangular grid of numbers.
@@ -49,11 +52,26 @@ public class Grid {
 		//pick 4 random positions
     	Coord[] matchingSetStartPoints = getRandomGridPositions(NUM_MATCHING_SETS);
 
+    	//
+    	for(Coord currentPoint : matchingSetStartPoints ) {
+    		//decide match set orientation - vertical/horizontal, up/down/left/right
+    		Direction matchSetDirection = getRandomMatchSetDirection(Orientation.getRandom());
+    		//decide block type
+    		//generate block coords and fill in grid
+    	}
+
 		for(int counter = 0; counter < gameGrid.length; counter++) {
 			if(gameGrid[counter] == null)
 				gameGrid[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
 		}
     }
+
+	private Direction getRandomMatchSetDirection(Orientation orientation) {
+		if(Orientation.HORIZONTAL == orientation)
+			return Direction.getRandomHorizontalDirection();
+
+		return Direction.getRandomVerticalDirection();
+	}
 
     private Coord[] getRandomGridPositions(int numElements) {
     	Coord[] gridPositions = new Coord[numElements];
