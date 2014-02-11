@@ -43,8 +43,11 @@ public class Grid {
      * Initialize/fill game grid with random objects
      */
     private void fillGameGrid() {
+    //create matching sets first, then fill in remaining elements with random numbers
+
     for(int counter = 0; counter < gameGrid.length; counter++) {
-		gameGrid[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
+    	if(gameGrid[counter] == null)
+    		gameGrid[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
 	}
     }
 
