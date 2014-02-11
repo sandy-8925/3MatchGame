@@ -47,16 +47,21 @@ public class Grid {
 		//create matching sets first, then fill in remaining elements with random numbers
 
 		//pick 4 random positions
-		Coord[] matchingSetStartPoints = new Coord[NUM_MATCHING_SETS];
-		for(Coord currentPoint : matchingSetStartPoints) {
-			currentPoint.x = randomNumberGenerator.nextInt(width);
-			currentPoint.y = randomNumberGenerator.nextInt(height);
-		}
+    	Coord[] matchingSetStartPoints = getRandomGridPositions(NUM_MATCHING_SETS);
 
 		for(int counter = 0; counter < gameGrid.length; counter++) {
 			if(gameGrid[counter] == null)
 				gameGrid[counter] = randomNumberGenerator.nextInt(numObjectTypes) + 1;
 		}
+    }
+
+    private Coord[] getRandomGridPositions(int numElements) {
+    	Coord[] gridPositions = new Coord[numElements];
+		for(Coord currentPoint : gridPositions) {
+			currentPoint.x = randomNumberGenerator.nextInt(width);
+			currentPoint.y = randomNumberGenerator.nextInt(height);
+		}
+		return gridPositions;
     }
 
     public Integer[] getGameGrid() {
