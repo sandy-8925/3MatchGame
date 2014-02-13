@@ -55,7 +55,7 @@ public class Grid {
     	//
     	for(Coord currentPoint : matchingSetStartPoints ) {
     		//decide match set orientation - vertical/horizontal, up/down/left/right
-    		Direction matchSetDirection = getRandomMatchSetDirection(Orientation.getRandom());
+    		//Direction matchSetDirection = getRandomMatchSetDirection(Orientation.getRandom());
     		//decide block type
     		//generate block coords and fill in grid
     	}
