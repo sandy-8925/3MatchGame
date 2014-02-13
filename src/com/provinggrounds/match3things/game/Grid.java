@@ -58,9 +58,11 @@ public class Grid {
     	//
     	for(Coord currentPoint : matchingSetStartPoints ) {
     		//decide match set orientation - vertical/horizontal, up/down/left/right
-    		//Direction matchSetDirection = getRandomMatchSetDirection(Orientation.getRandom());
+    		Direction matchSetDirection = getRandomMatchSetDirection(currentPoint);
     		//decide block type
+    		int blockType = randomNumberGenerator.nextInt(numObjectTypes) + 1;
     		//generate block coords and fill in grid
+    		fillMatchingSet(currentPoint, matchSetDirection, blockType);
     	}
 
 		for(int counter = 0; counter < gameGrid.length; counter++) {
