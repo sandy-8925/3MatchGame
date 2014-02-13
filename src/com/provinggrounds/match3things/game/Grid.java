@@ -70,7 +70,7 @@ public class Grid {
 		}
     }
 
-    private void fillMatchingSet(Coord currentPoint,Direction matchSetDirection, int blockType) {
+    private void fillMatchingSet(Coord currentPoint, Direction matchSetDirection, int blockType) {
     	//generate set coords based on starting point and match set direction
     	Coord[] matchingSetCoords = new Coord[NUMBER_ELEMENTS_MATCHING_SET];
     	matchingSetCoords[0] = currentPoint;
