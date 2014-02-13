@@ -133,12 +133,14 @@ public class Grid {
 	}
 
     private Coord[] getRandomGridPositions(int numElements) {
-    	Coord[] gridPositions = new Coord[numElements];
-		for(Coord currentPoint : gridPositions) {
-			currentPoint.x = randomNumberGenerator.nextInt(width);
-			currentPoint.y = randomNumberGenerator.nextInt(height);
+    	Set<Coord> gridPositions = new HashSet<Coord>();
+		for(int counter=0; counter<numElements; counter++) {
+			int x = randomNumberGenerator.nextInt(width);
+			int y = randomNumberGenerator.nextInt(height);
+			Coord currentPoint = new Coord(x, y);
+			gridPositions.add(currentPoint);
 		}
-		return gridPositions;
+		return (Coord[]) gridPositions.toArray();
     }
 
     public Integer[] getGameGrid() {
