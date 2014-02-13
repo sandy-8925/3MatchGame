@@ -66,11 +66,13 @@ public class Grid {
 		}
     }
 
-	private Direction getRandomMatchSetDirection(Orientation orientation) {
-		if(Orientation.HORIZONTAL == orientation)
-			return Direction.getRandomHorizontalDirection();
+    /*
+     * Determine which directions are valid (match set must stay within
+     * grid boundary), given a starting point and Grid dimensions
+     * and randomly pick a valid direction
+     */
+	private Direction getRandomMatchSetDirection(Coord matchSetStartingPoint) {
 
-		return Direction.getRandomVerticalDirection();
 	}
 
     private Coord[] getRandomGridPositions(int numElements) {
