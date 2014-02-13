@@ -12,6 +12,7 @@ import com.provinggrounds.match3things.util.Orientation;
  */
 public class Grid {
     private static final int NUM_MATCHING_SETS = 4;
+    private static final int NUMBER_ELEMENTS_MATCHING_SET = 3;
     int width;
     int height;
     /*
