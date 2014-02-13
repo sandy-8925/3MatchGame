@@ -1,6 +1,8 @@
 package com.provinggrounds.match3things.game;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import com.provinggrounds.match3things.util.Direction;
 import com.provinggrounds.match3things.util.Orientation;
@@ -74,6 +76,17 @@ public class Grid {
      */
 	private Direction getRandomMatchSetDirection(Coord matchSetStartingPoint) {
 
+    private Direction[] getValidMatchSetDirections(Coord matchSetStartingPoint) {
+    	Set<Direction> validDirectionSet = new HashSet<Direction>();
+    	//check UP
+		if(matchSetStartingPoint.y - 2 >= 0) validDirectionSet.add(Direction.UP);
+    	//check DOWN
+		if(matchSetStartingPoint.y + 2 <= height) validDirectionSet.add(Direction.DOWN);
+    	//check LEFT
+		if(matchSetStartingPoint.x - 2 >= 0) validDirectionSet.add(Direction.LEFT);
+    	//check RIGHT
+		if(matchSetStartingPoint.x + 2 <= width) validDirectionSet.add(Direction.RIGHT);
+		return validDirectionSet.toArray(new Direction[validDirectionSet.size()]);
 	}
 
     private Coord[] getRandomGridPositions(int numElements) {
