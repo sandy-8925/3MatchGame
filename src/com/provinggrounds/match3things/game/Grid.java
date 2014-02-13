@@ -71,6 +71,43 @@ public class Grid {
 		}
     }
 
+    private void fillMatchingSet(Coord currentPoint,Direction matchSetDirection, int blockType) {
+    	//generate set coords based on starting point and match set direction
+    	Coord[] matchingSetCoords = new Coord[NUMBER_ELEMENTS_MATCHING_SET];
+    	matchingSetCoords[0] = currentPoint;
+    	switch(matchSetDirection) {
+    		case UP:
+    			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
+    				matchingSetCoords[counter].x = currentPoint.x;
+    				matchingSetCoords[counter].y = currentPoint.y - counter;
+    			}
+    			break;
+    		case DOWN:
+    			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
+    				matchingSetCoords[counter].x = currentPoint.x;
+    				matchingSetCoords[counter].y = currentPoint.y + counter;
+    			}
+    			break;
+    		case LEFT:
+    			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
+    				matchingSetCoords[counter].x = currentPoint.x - counter;
+    				matchingSetCoords[counter].y = currentPoint.y;
+    			}
+    			break;
+    		case RIGHT:
+    			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
+    				matchingSetCoords[counter].x = currentPoint.x + counter;
+    				matchingSetCoords[counter].y = currentPoint.y;
+    			}
+    			break;
+			default:
+				break;
+    	}
+    	for(Coord elementCoord : matchingSetCoords) {
+    		gameGrid[width*elementCoord.y + elementCoord.x] = blockType;
+    	}
+	}
+
     /*
      * Determine which directions are valid (match set must stay within
      * grid boundary), given a starting point and Grid dimensions
