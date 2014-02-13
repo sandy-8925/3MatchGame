@@ -77,26 +77,26 @@ public class Grid {
     	switch(matchSetDirection) {
     		case UP:
     			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
-    				matchingSetCoords[counter].x = currentPoint.x;
-    				matchingSetCoords[counter].y = currentPoint.y - counter;
+    				Coord currentPointCoords = new Coord(currentPoint.x, currentPoint.y - counter);
+    				matchingSetCoords[counter] = currentPointCoords;
     			}
     			break;
     		case DOWN:
     			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
-    				matchingSetCoords[counter].x = currentPoint.x;
-    				matchingSetCoords[counter].y = currentPoint.y + counter;
+    				Coord currentPointCoords = new Coord(currentPoint.x, currentPoint.y + counter);
+    				matchingSetCoords[counter] = currentPointCoords;
     			}
     			break;
     		case LEFT:
     			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
-    				matchingSetCoords[counter].x = currentPoint.x - counter;
-    				matchingSetCoords[counter].y = currentPoint.y;
+    				Coord currentPointCoords = new Coord(currentPoint.x - counter, currentPoint.y);
+    				matchingSetCoords[counter] = currentPointCoords;
     			}
     			break;
     		case RIGHT:
     			for(int counter = 1; counter<NUMBER_ELEMENTS_MATCHING_SET; counter++) {
-    				matchingSetCoords[counter].x = currentPoint.x + counter;
-    				matchingSetCoords[counter].y = currentPoint.y;
+    				Coord currentPointCoords = new Coord(currentPoint.x + counter, currentPoint.y);
+    				matchingSetCoords[counter] = currentPointCoords;
     			}
     			break;
 			default:
