@@ -53,7 +53,7 @@ public class Grid {
 		//create matching sets first, then fill in remaining elements with random numbers
 
 		//pick 4 random positions
-    	Coord[] matchingSetStartPoints = getRandomGridPositions(NUM_MATCHING_SETS);
+    	Set<Coord> matchingSetStartPoints = getRandomGridPositions(NUM_MATCHING_SETS);
 
     	//
     	for(Coord currentPoint : matchingSetStartPoints ) {
@@ -132,7 +132,7 @@ public class Grid {
 		return validDirectionSet.toArray(new Direction[validDirectionSet.size()]);
 	}
 
-    private Coord[] getRandomGridPositions(int numElements) {
+    private Set<Coord> getRandomGridPositions(int numElements) {
     	Set<Coord> gridPositions = new HashSet<Coord>();
 		for(int counter=0; counter<numElements; counter++) {
 			int x = randomNumberGenerator.nextInt(width);
@@ -140,7 +140,7 @@ public class Grid {
 			Coord currentPoint = new Coord(x, y);
 			gridPositions.add(currentPoint);
 		}
-		return (Coord[]) gridPositions.toArray();
+		return gridPositions;
     }
 
     public Integer[] getGameGrid() {
