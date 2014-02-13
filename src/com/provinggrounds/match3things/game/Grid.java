@@ -55,7 +55,6 @@ public class Grid {
 		//pick 4 random positions
     	Set<Coord> matchingSetStartPoints = getRandomGridPositions(NUM_MATCHING_SETS);
 
-    	//
     	for(Coord currentPoint : matchingSetStartPoints ) {
     		//decide match set orientation - vertical/horizontal, up/down/left/right
     		Direction matchSetDirection = getRandomMatchSetDirection(currentPoint);
