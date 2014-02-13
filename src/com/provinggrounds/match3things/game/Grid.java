@@ -75,6 +75,10 @@ public class Grid {
      * and randomly pick a valid direction
      */
 	private Direction getRandomMatchSetDirection(Coord matchSetStartingPoint) {
+		Direction[] validDirections = getValidMatchSetDirections(matchSetStartingPoint);
+		//return random valid direction
+		return validDirections[randomNumberGenerator.nextInt(validDirections.length)];
+	}
 
     private Direction[] getValidMatchSetDirections(Coord matchSetStartingPoint) {
     	Set<Direction> validDirectionSet = new HashSet<Direction>();
