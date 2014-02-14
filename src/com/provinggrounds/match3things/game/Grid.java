@@ -29,7 +29,7 @@ public class Grid {
     private Grid() {
     }
 
-    public Grid(int width, int height, int numObjectTypes) {
+    Grid(int width, int height, int numObjectTypes) {
 	this.width = width;
 	this.height = height;
 	this.numObjectTypes = numObjectTypes;
