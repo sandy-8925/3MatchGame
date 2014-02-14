@@ -33,13 +33,14 @@ public class Grid {
 	this.width = width;
 	this.height = height;
 	this.numObjectTypes = numObjectTypes;
-
-	initGameGridArray();
-	fillGameGrid();
     }
 
     public static Grid createGrid(int width, int height, int numObjectTypes) {
 	Grid newGrid = new Grid(width, height, numObjectTypes);
+
+	newGrid.initGameGridArray();
+	newGrid.fillGameGrid();
+
 	return newGrid;
     }
 
