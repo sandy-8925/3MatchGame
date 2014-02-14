@@ -5,7 +5,6 @@ import java.util.Random;
 import java.util.Set;
 
 import com.provinggrounds.match3things.util.Direction;
-import com.provinggrounds.match3things.util.Orientation;
 
 
 /*
