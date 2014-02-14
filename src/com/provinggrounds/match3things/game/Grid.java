@@ -122,11 +122,11 @@ public class Grid {
     	//check UP
 		if(matchSetStartingPoint.y - 2 >= 0) validDirectionSet.add(Direction.UP);
     	//check DOWN
-		if(matchSetStartingPoint.y + 2 <= height) validDirectionSet.add(Direction.DOWN);
+		if(matchSetStartingPoint.y + 2 < height) validDirectionSet.add(Direction.DOWN);
     	//check LEFT
 		if(matchSetStartingPoint.x - 2 >= 0) validDirectionSet.add(Direction.LEFT);
     	//check RIGHT
-		if(matchSetStartingPoint.x + 2 <= width) validDirectionSet.add(Direction.RIGHT);
+		if(matchSetStartingPoint.x + 2 < width) validDirectionSet.add(Direction.RIGHT);
 		return validDirectionSet.toArray(new Direction[validDirectionSet.size()]);
 	}
 
