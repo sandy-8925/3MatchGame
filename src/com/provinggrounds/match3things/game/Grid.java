@@ -38,6 +38,11 @@ public class Grid {
 	fillGameGrid();
     }
 
+    public static Grid createGrid(int width, int height, int numObjectTypes) {
+	Grid newGrid = new Grid(width, height, numObjectTypes);
+	return newGrid;
+    }
+
     /*
      * Creates grid, allocates storage
      */
