@@ -23,12 +23,6 @@ public class Grid {
     Integer[] gameGrid;
     static final Random randomNumberGenerator = new Random();
 
-    /*
-     * Width and height must always be provided to Grid - should not be constructed without initializing/passing in those values
-     */
-    private Grid() {
-    }
-
     Grid(int width, int height, int numObjectTypes) {
 	this.width = width;
 	this.height = height;
