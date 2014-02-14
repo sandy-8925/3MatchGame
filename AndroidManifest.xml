@@ -8,11 +8,18 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="18" />
 
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.provinggrounds.match3things" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <uses-library android:name="android.test.runner" />
+
         <activity
             android:name="com.provinggrounds.match3things.activity.MainMenuActivity"
             android:label="@string/app_name" >
@@ -34,6 +41,7 @@
             android:name="com.provinggrounds.match3things.activity.NewGamePreferencesActivity"
             android:label="@string/title_activity_new_game_preferences" >
         </activity>
+
     </application>
 
 </manifest>
