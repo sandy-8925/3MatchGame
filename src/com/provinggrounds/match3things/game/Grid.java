@@ -1,5 +1,6 @@
 package com.provinggrounds.match3things.game;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -139,6 +140,63 @@ public class Grid {
 			gridPositions.add(currentPoint);
 		}
 		return gridPositions;
+    }
+    
+    public Collection<MatchingSet> findMatches() {
+	Set<MatchingSet> matchingSets = new HashSet<MatchingSet>();
+	//find horizontal matches
+	matchingSets.addAll(findHorizontalMatches());
+	//find vertical matches
+	//matchingSets.addAll(findVerticalMatches());
+	//mark all matching blocks deleted (make them 0)
+	//markMatchingBlocksDeleted(matchingSets);
+	return matchingSets;
+    }
+
+    private Collection<MatchingSet> findHorizontalMatches() {
+	//for each row, find matches
+	Set<MatchingSet> horizontalMatchingSets = new HashSet<MatchingSet>();
+	for(int rowCounter=0; rowCounter<height; rowCounter++) {
+	    horizontalMatchingSets.addAll(findMatchesInRow(rowCounter));
+	}
+	return horizontalMatchingSets;
+    }
+
+    private Collection<MatchingSet> findMatchesInRow(int rowNumber) {
+	Set<MatchingSet> matchingSetsInRow = new HashSet<MatchingSet>();
+	int beginningOfRow = rowNumber*width;
+	int endOfRow = (rowNumber+1)*width - 1;
+	int rowLength = width;
+	int currentIndex = beginningOfRow;
+	while(currentIndex <= endOfRow) {
+	    int currentSequenceNumber = gameGrid[currentIndex];
+	    int begIndex = currentIndex;
+	    int currentSequenceLength = 1;
+	    currentIndex++;
+	    while(currentIndex <= endOfRow && gameGrid[currentIndex].equals(currentSequenceNumber)) {
+		    currentIndex++;
+		    currentSequenceLength++;
+		}
+	    int endIndex = currentIndex - 1;
+	    if(currentSequenceLength >= NUMBER_ELEMENTS_MATCHING_SET) { //if matching set, save it
+		matchingSetsInRow.add(createMatchingSetInRow(begIndex - beginningOfRow, endIndex - beginningOfRow, rowNumber, currentSequenceNumber));
+	    }	    
+	}
+	return matchingSetsInRow;
+    }
+
+    private MatchingSet createMatchingSetInRow(int beg, int end, int rowNumber,
+	    int blockType) {
+	MatchingSet matchingSet = new MatchingSet();
+	int sequenceLength = end - beg + 1;
+	Coord[] blockCoords = new Coord[sequenceLength];
+	matchingSet.setBlockType(blockType);
+	for(int counter=beg; counter<=end; counter++) {
+	    Coord newCoord = new Coord(counter, rowNumber);
+	    blockCoords[counter-beg] = newCoord;
+	}
+	matchingSet.setCoordinates(blockCoords);
+	return matchingSet;
     }
 
     public Integer[] getGameGrid() {
