@@ -5,10 +5,10 @@ import java.util.HashSet;
 
 public class MatchingSet {
     private int blockType;
-    private Collection<Coord> coordinates;
+    private Coord[] coordinates;
 
     int length() {
-	return coordinates.size();
+	return coordinates.length;
     }
 
     public int getBlockType() {
@@ -19,11 +19,11 @@ public class MatchingSet {
         this.blockType = blockType;
     }
 
-    public Collection<Coord> getCoordinates() {
+    public Coord[] getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(Collection<Coord> coordinates) {
+    public void setCoordinates(Coord[] coordinates) {
         this.coordinates = coordinates;
     }
 }
