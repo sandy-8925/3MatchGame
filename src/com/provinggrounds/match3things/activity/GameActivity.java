@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
@@ -55,4 +56,7 @@ public class GameActivity extends Activity {
 	return true;
     }
 
+    public void findMatchesInGrid(View clickedView) {
+	currentGameGrid.findMatches();
+    }
 }
