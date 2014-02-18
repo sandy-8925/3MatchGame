@@ -7,10 +7,6 @@ public class MatchingSet {
     private int blockType;
     private Collection<Coord> coordinates;
 
-    public MatchingSet() {
-	coordinates = new HashSet<Coord>();
-    }
-
     int length() {
 	return coordinates.size();
     }
