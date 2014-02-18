@@ -22,4 +22,8 @@ public class MatchingSet {
     public Collection<Coord> getCoordinates() {
         return coordinates;
     }
+
+    public void setCoordinates(Collection<Coord> coordinates) {
+        this.coordinates = coordinates;
+    }
 }
