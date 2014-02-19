@@ -166,7 +166,6 @@ public class Grid {
 	Set<MatchingSet> matchingSetsInRow = new HashSet<MatchingSet>();
 	int beginningOfRow = rowNumber*width;
 	int endOfRow = (rowNumber+1)*width - 1;
-	int rowLength = width;
 	int currentIndex = beginningOfRow;
 	while(currentIndex <= endOfRow) {
 	    int currentSequenceNumber = gameGrid[currentIndex];
