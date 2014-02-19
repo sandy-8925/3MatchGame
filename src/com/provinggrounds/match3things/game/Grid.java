@@ -147,10 +147,52 @@ public class Grid {
 	//find horizontal matches
 	matchingSets.addAll(findHorizontalMatches());
 	//find vertical matches
-	//matchingSets.addAll(findVerticalMatches());
+	matchingSets.addAll(findVerticalMatches());
 	//mark all matching blocks deleted (make them 0)
 	//markMatchingBlocksDeleted(matchingSets);
 	return matchingSets;
+    }
+
+    private Collection<MatchingSet> findVerticalMatches() {
+        // for each row, find matches
+        Set<MatchingSet> verticalMatchingSets = new HashSet<MatchingSet>();
+        for (int columnCounter = 0; columnCounter < width; columnCounter++) {
+            verticalMatchingSets.addAll(findMatchesInColumn(columnCounter));
+        }
+        return verticalMatchingSets;
+    }
+
+    private Collection<MatchingSet> findMatchesInColumn(final int columnNumber) {
+        Set<MatchingSet> matchingSetsInColumn = new HashSet<MatchingSet>();
+        int currentIndex = 0;
+        while(currentIndex < height) {
+            int currentSequenceNumber = gameGrid[currentIndex*width+columnNumber];
+            int begIndex = currentIndex;
+            int currentSequenceLength = 1;
+            currentIndex++;
+            while(currentIndex < height && gameGrid[currentIndex*width+columnNumber].equals(currentSequenceNumber)) {
+                currentIndex++;
+                currentSequenceLength++;
+            }
+            if(currentSequenceLength >= NUMBER_ELEMENTS_MATCHING_SET) { //if matching set, save it
+                int endIndex = currentIndex - 1;
+                matchingSetsInColumn.add(createMatchingSetInColumn(begIndex, endIndex, columnNumber, currentSequenceNumber));
+            }
+        }
+        return matchingSetsInColumn;
+    }
+
+    private MatchingSet createMatchingSetInColumn(int begIndex, int endIndex, int columnNumber, int blockType) {
+        MatchingSet matchingSet = new MatchingSet();
+        int sequenceLength = endIndex - begIndex + 1;
+        Coord[] blockCoords = new Coord[sequenceLength];
+        matchingSet.setBlockType(blockType);
+        for(int counter=begIndex; counter<=endIndex; counter++) {
+            Coord newCoord = new Coord(columnNumber, counter);
+            blockCoords[counter-begIndex] = newCoord;
+        }
+        matchingSet.setCoordinates(blockCoords);
+        return matchingSet;
     }
 
     private Collection<MatchingSet> findHorizontalMatches() {
