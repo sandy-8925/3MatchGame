@@ -180,7 +180,7 @@ public class Grid {
 	    int endIndex = currentIndex - 1;
 	    if(currentSequenceLength >= NUMBER_ELEMENTS_MATCHING_SET) { //if matching set, save it
 		matchingSetsInRow.add(createMatchingSetInRow(begIndex - beginningOfRow, endIndex - beginningOfRow, rowNumber, currentSequenceNumber));
-	    }	    
+	    }
 	}
 	return matchingSetsInRow;
     }
