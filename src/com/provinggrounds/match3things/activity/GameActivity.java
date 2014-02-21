@@ -57,6 +57,10 @@ public class GameActivity extends Activity {
     }
 
     public void findMatchesInGrid(View clickedView) {
+	//disable button
 	currentGameGrid.findMatches();
+	//mark blocks deleted
+	//log match set information to logcat
+	//display match information
     }
 }
