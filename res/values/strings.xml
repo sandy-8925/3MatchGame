@@ -12,5 +12,7 @@
     <string name="text_numBlockTypes">Number of block types</string>
     <string name="text_OK">OK</string>
     <string name="text_showMatches">Show matches</string>
+    <string name="text_findingMatches">Finding matches...</string>
+    <string name="text_done">Done</string>
 
 </resources>
