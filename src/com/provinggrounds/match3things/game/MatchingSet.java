@@ -1,8 +1,5 @@
 package com.provinggrounds.match3things.game;
 
-import java.util.Collection;
-import java.util.HashSet;
-
 public class MatchingSet {
     private int blockType;
     private Coord[] coordinates;
