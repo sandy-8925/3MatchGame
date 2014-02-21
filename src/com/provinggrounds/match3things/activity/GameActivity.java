@@ -1,6 +1,7 @@
 package com.provinggrounds.match3things.activity;
 
 import com.proving.grounds.match3things.R;
+import com.provinggrounds.match3things.fragment.MatchingSetInfoDisplayFragment;
 import com.provinggrounds.match3things.game.Grid;
 
 import android.os.Bundle;
@@ -58,9 +59,15 @@ public class GameActivity extends Activity {
 
     public void findMatchesInGrid(View clickedView) {
 	//disable button
+	clickedView.setClickable(false);
 	currentGameGrid.findMatches();
 	//mark blocks deleted
 	//log match set information to logcat
-	//display match information
+	/*
+	 * display match information
+	 * 1. Show fragment
+	 * 2. Show match information in fragment's TextView
+	 */
+	getFragmentManager().beginTransaction().add(R.id.matchingSetDisplay, new MatchingSetInfoDisplayFragment()).commit();
     }
 }
