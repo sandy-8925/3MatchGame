@@ -1,8 +1,11 @@
 package com.provinggrounds.match3things.activity;
 
+import java.util.Collection;
+
 import com.proving.grounds.match3things.R;
 import com.provinggrounds.match3things.fragment.MatchingSetInfoDisplayFragment;
 import com.provinggrounds.match3things.game.Grid;
+import com.provinggrounds.match3things.game.MatchingSet;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -60,7 +63,7 @@ public class GameActivity extends Activity {
     public void findMatchesInGrid(View clickedView) {
 	//disable button
 	clickedView.setClickable(false);
-	currentGameGrid.findMatches();
+	Collection<MatchingSet> matchingSets = currentGameGrid.findMatches();
 	//mark blocks deleted
 	//generate match set string
 	//log match set information to logcat
