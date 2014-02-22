@@ -62,7 +62,7 @@ public class GameActivity extends Activity {
     }
 
     public void findMatchesInGrid(View clickedView) {
-	//disable button
+	//disable "Show matches" button to prevent extra unnecessary calls
 	clickedView.setClickable(false);
 	Collection<MatchingSet> matchingSets = currentGameGrid.findMatches();
 	//mark blocks deleted
