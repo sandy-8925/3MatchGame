@@ -15,4 +15,11 @@ public class Coord {
 		this.x = x;
 		this.y = y;
 	}
+
+	/**
+	 * @return String representation of Coord in following format: {x,y}
+	 */
+	@Override public String toString() {
+	    return String.format("{%d,%d}", x, y);
+	}
 }
