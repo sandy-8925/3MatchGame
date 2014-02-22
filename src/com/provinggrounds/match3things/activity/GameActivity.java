@@ -62,6 +62,7 @@ public class GameActivity extends Activity {
 	clickedView.setClickable(false);
 	currentGameGrid.findMatches();
 	//mark blocks deleted
+	//generate match set string
 	//log match set information to logcat
 	/*
 	 * display match information
