@@ -1,6 +1,7 @@
 package com.provinggrounds.match3things.activity;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 import com.proving.grounds.match3things.R;
 import com.provinggrounds.match3things.fragment.MatchingSetInfoDisplayFragment;
@@ -73,5 +74,22 @@ public class GameActivity extends Activity {
 	 * 2. Show match information in fragment's TextView
 	 */
 	getFragmentManager().beginTransaction().add(R.id.matchingSetDisplay, new MatchingSetInfoDisplayFragment()).commit();
+    }
+
+    /**
+     * Returns a collection of strings that represent the matching sets passed in.
+     * The collection of strings will not necessarily be in the same order as the 
+     * collection of matching sets passed in.
+     *
+     * @param   matchingSets   The collection of matching sets for which string representations need to be generated
+     * @return                 The collection of strings representing the matching sets passed in
+     * @see     MatchingSet
+     */
+    private static Collection<String> generateMatchSetStrings(Collection<MatchingSet> matchingSets) {
+	Collection<String> matchSetStrings = new HashSet<String>();
+	for(MatchingSet ms : matchingSets) {
+	    matchSetStrings.add(ms.toString());
+	}
+	return matchSetStrings;
     }
 }
