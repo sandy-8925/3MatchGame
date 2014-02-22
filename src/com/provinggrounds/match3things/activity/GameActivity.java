@@ -61,9 +61,9 @@ public class GameActivity extends Activity {
 	return true;
     }
 
-    public void findMatchesInGrid(View clickedView) {
+    public void findMatchesInGrid(View showMatchesButton) {
 	//disable "Show matches" button to prevent extra unnecessary calls
-	clickedView.setClickable(false);
+	showMatchesButton.setClickable(false);
 	Collection<MatchingSet> matchingSets = currentGameGrid.findMatches();
 	//mark blocks deleted
 	//generate match set string
