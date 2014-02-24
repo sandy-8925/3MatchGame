@@ -11,6 +11,7 @@ import com.provinggrounds.match3things.game.MatchingSet;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -69,6 +70,9 @@ public class GameActivity extends Activity {
 	//generate match set string
 	Collection<String> matchSetStrings = generateMatchSetStrings(matchingSets);
 	//log match set information to logcat
+	for(String matchSet : matchSetStrings) {
+	    Log.i("Matchset information", matchSet);
+	}
 	/*
 	 * display match information
 	 * 1. Show fragment
