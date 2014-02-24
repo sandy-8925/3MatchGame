@@ -17,7 +17,7 @@ public class Grid {
     private static final int NUMBER_ELEMENTS_MATCHING_SET = 3;
     private int width;
     private int height;
-    /*
+    /**
      * Represents number of unique object types
      */
     int numObjectTypes;
