@@ -78,7 +78,7 @@ public class GameActivity extends Activity {
 	 * 1. Show fragment
 	 * 2. Show match information in fragment's TextView
 	 */
-	getFragmentManager().beginTransaction().add(R.id.matchingSetDisplay, new MatchingSetInfoDisplayFragment()).commit();
+	//getFragmentManager().beginTransaction().add(R.id.matchingSetDisplay, new MatchingSetInfoDisplayFragment()).commit();
     }
 
     /**
