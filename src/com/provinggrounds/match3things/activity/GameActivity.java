@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import com.proving.grounds.match3things.R;
-import com.provinggrounds.match3things.fragment.MatchingSetInfoDisplayFragment;
 import com.provinggrounds.match3things.game.Grid;
 import com.provinggrounds.match3things.game.MatchingSet;
 
