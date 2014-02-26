@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.GridView;
 
 public class GameActivity extends Activity {
@@ -23,7 +24,7 @@ public class GameActivity extends Activity {
     private static final int defaultGridHeight = 4;
     Grid currentGameGrid;
     GridView gameGridView;
-    private ArrayAdapter<Integer> gameGridAdapter;
+    private BaseAdapter gameGridAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
