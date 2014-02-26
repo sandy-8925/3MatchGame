@@ -1,11 +1,13 @@
 package com.provinggrounds.match3things.activity;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.provinggrounds.match3things.game.Grid;
 
 /**
@@ -66,6 +68,7 @@ final class GameGridAdapter extends BaseAdapter {
         }
         if(gameGrid.getGameGrid()[position].equals(0)) {
             textView.setText("X");
+            textView.setBackgroundColor(Color.RED);
         }
         return textView;
     }
