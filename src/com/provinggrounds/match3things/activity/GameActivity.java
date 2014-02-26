@@ -13,7 +13,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 
@@ -45,7 +44,7 @@ public class GameActivity extends Activity {
     private void setGridViewProperties(Grid gameGrid) {
 	GridView gameGridView = (GridView)findViewById(R.id.gameGrid);
 	gameGridView.setNumColumns(gameGrid.getWidth());
-	gameGridAdapter = new ArrayAdapter<Integer>(this, R.layout.grid_element_text_view, gameGrid.getGameGrid());
+	gameGridAdapter = new GameGridAdapter(gameGrid, this);
 	gameGridView.setAdapter(gameGridAdapter);
     }
 
