@@ -23,6 +23,7 @@ public class GameActivity extends Activity {
     private static final int defaultGridHeight = 4;
     Grid currentGameGrid;
     GridView gameGridView;
+    private ArrayAdapter<Integer> gameGridAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +44,8 @@ public class GameActivity extends Activity {
     private void setGridViewProperties(Grid gameGrid) {
 	GridView gameGridView = (GridView)findViewById(R.id.gameGrid);
 	gameGridView.setNumColumns(gameGrid.getWidth());
-	ArrayAdapter<Integer> gridAdapter = new ArrayAdapter<Integer>(this, R.layout.grid_element_text_view, gameGrid.getGameGrid());
-	gameGridView.setAdapter(gridAdapter);
+	gameGridAdapter = new ArrayAdapter<Integer>(this, R.layout.grid_element_text_view, gameGrid.getGameGrid());
+	gameGridView.setAdapter(gameGridAdapter);
     }
 
     /**
