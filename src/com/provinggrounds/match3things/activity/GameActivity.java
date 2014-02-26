@@ -66,6 +66,7 @@ public class GameActivity extends Activity {
 	showMatchesButton.setClickable(false);
 	Collection<MatchingSet> matchingSets = currentGameGrid.findMatches();
 	//mark blocks deleted
+	currentGameGrid.markMatchingBlocksDeleted(matchingSets);
 	//generate match set string
 	Collection<String> matchSetStrings = generateMatchSetStrings(matchingSets);
 	//log match set information to logcat
