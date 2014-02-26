@@ -251,4 +251,12 @@ public class Grid {
     public int getHeight() {
         return height;
     }
+
+    public void markMatchingBlocksDeleted(Collection<MatchingSet> matchingSets) {
+        for(MatchingSet ms : matchingSets ) {
+            for( Coord position : ms.getCoordinates() ) {
+                gameGrid[position.y*width + position.x] = 0;
+            }
+        }
+    }
 }
